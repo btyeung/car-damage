@@ -1,0 +1,28 @@
+
+#exclude weigth files
+*.pth
+
+#TODO: adjust this incase size is too large for repository
+#include reference weight file
+!reference.pth
+
+#tox
+.tox
+
+*.egg-info
+
+#output items
+wandb
+mlruns
+outputs
+
+__pycache__
+.idea
+.vscode
+
+#notebooks
+.ipynb_checkpoints
+
+.pytest_cache
+
+
