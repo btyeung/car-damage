@@ -4,7 +4,6 @@
 
 #TODO: adjust this incase size is too large for repository
 #include reference weight file
-!reference.pth
 
 #tox
 .tox
