@@ -17,7 +17,7 @@ from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 
 
 #instantiate the damage model
-def get_auto_model(weights_path, num_classes=2):
+def get_auto_model(weights_path, device, num_classes=2):
 
     # load an instance segmentation model pre-trained on COCO
     model = torchvision.models.detection.fasterrcnn_resnet50_fpn()
@@ -26,10 +26,24 @@ def get_auto_model(weights_path, num_classes=2):
     # replace the pre-trained head with a new one
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
 
-    model.load_state_dict(torch.load(weights_path, map_location=DEVICE))
-    model.to(DEVICE)
+    model.load_state_dict(torch.load(weights_path, map_location=device))
 
     return model
+
+#convert image to tensor with pre-processing
+def image_to_tensor(raw_image):
+    # convert the image from BGR to RGB channel ordering and change the
+    # image from channels last to channels first ordering
+    raw_image = cv2.cvtColor(raw_image, cv2.COLOR_BGR2RGB)
+    raw_image = raw_image.transpose((2, 0, 1))
+
+    # add the batch dimension, scale the raw pixel intensities to the
+    # range [0, 1], and convert the image to a floating point tensor
+    raw_image = np.expand_dims(raw_image, axis=0)
+    raw_image = raw_image / 255.0
+    raw_image = torch.FloatTensor(raw_image)
+
+    return raw_image
 
 #main section
 if __name__ == "__main__":
@@ -77,11 +91,14 @@ if __name__ == "__main__":
         #TODO: send to device
         
     #init for inference
+    model.to(DEVICE)
     model.eval()
 
     # load the image from disk
     image = cv2.imread(args["image"])
     orig = image.copy()
+
+    #TODO: refactor with new function
 
     # convert the image from BGR to RGB channel ordering and change the
     # image from channels last to channels first ordering
@@ -97,6 +114,8 @@ if __name__ == "__main__":
     # send the input to the device and pass the it through the network to
     # get the detections and predictions
     image = image.to(DEVICE)
+
+    # perform inference
     detections = model(image)[0]
 
     #sanity check

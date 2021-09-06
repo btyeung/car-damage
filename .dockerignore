@@ -1,0 +1,14 @@
+# ignore 
+.git/
+__pycache__/
+.vscode/
+.cache/
+.pytest_cache/
+.ipynb_checkpoints/
+.tox/
+
+#data/
+models/
+
+#reinclude files and dirs
+!models/reference.pth
