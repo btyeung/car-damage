@@ -43,8 +43,6 @@ if __name__ == "__main__":
     ap.add_argument("-m", "--model", type=str, default="custom-auto",
         choices=["frcnn-resnet", "frcnn-mobilenet", "retinanet", "custom-auto"],
         help="name of the object detection model")
-    ap.add_argument("-l", "--labels", type=str, default="coco_classes.pickle",
-        help="path to file containing list of categories in COCO dataset")
     ap.add_argument("-c", "--confidence", type=float, default=0.10,
         help="minimum probability to filter weak detections")
     args = vars(ap.parse_args())
