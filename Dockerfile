@@ -26,12 +26,6 @@ ENV FLASK_RUN_HOST=0.0.0.0
 #transfer source files
 COPY './src' $HOME/src/
 
-#RUN apt-get update && \
-#    apt-get install -y software-properties-common && \
-#    rm -rf /var/lib/apt/lists/*
-#RUN add-apt-repository ppa:deadsnakes/ppa
-#RUN apt-get update && apt-get install -y python3.8 python3-pip
-
 #install dependencies
 RUN pip3 install -r $HOME/src/models/requirements-serve.txt
 
