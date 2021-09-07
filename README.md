@@ -4,14 +4,12 @@ Autos and AI for Low Code
 
 <img src="https://user-images.githubusercontent.com/9223799/132366378-f7721343-a55d-4d91-b47d-7c733923df17.png" width="25%">
 <br />
-<br />
 
 ## Overview
 A sample machine vision project that accepts an image of a car (presumably with forms of damage), and returns a picture annotated with boxes around likely areas of damage.  
 <br />
 ## Motivation
 We built this project to show how custom trained AI models are incorporated into low code platforms such as Mendix, referencing great work already done in the references section.  The aim of this project is to get readers excited about working with AI models, with code examples showing training, inference, containerization and prototype serving (not production) of a simple consumer facing use case. This is by no means a study into each area, but more an attempt at an end to end example of training to serving.   
-<br />
 
 ## Quick start (in two sections):
 * Git clone this project, making sure weight file (final.pth) downloads into models/weights/
@@ -29,8 +27,6 @@ We built this project to show how custom trained AI models are incorporated into
 * Assuming you're running a GPU locally or on a cloud instance, at the command line typing nvidia-smi should show you meaningful info.
 * Additional steps here... (TBD)
 
-<br />
-
 ## Tech used
 * Python v3.9 
 * Nvidia (Cuda 11 +) for GPU acceleration
@@ -40,7 +36,6 @@ We built this project to show how custom trained AI models are incorporated into
 * Inference served with AWS g4dn.xlarge (Nvidia T4), AMI of Deep Learning Ubuntu 18
 * Training locally with Ubuntu 20.04 (passthrough Nvidia 1080Ti) VM, Proxmox VE 7
 
-<br />
 
 ## References (Huge thanks for their groundwork!):
 * [Car Damage Classification](https://medium.com/analytics-vidhya/car-damage-classification-using-deep-learning-d29fa1e9a520_)
@@ -48,13 +43,11 @@ We built this project to show how custom trained AI models are incorporated into
 * [Pytorch Object Detection](https://www.pyimagesearch.com/2021/08/02/pytorch-object-detection-with-pre-trained-networks/)
 * [How to train Object Detector with COCO dataset in Pytorch](https://medium.com/fullstackai/how-to-train-an-object-detector-with-your-own-coco-dataset-in-pytorch-319e7090da5) 
 
-<br />
 
 ## Upcoming enhancements
 * Publish of training components
 * Conversion to ONNX and running direct within Mendix runtime
 
-<br />
 
 ### Project Organization (not all parts are implemented)
 
