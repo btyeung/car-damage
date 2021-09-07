@@ -23,8 +23,8 @@ run-image:
 
 #Run docker image for serving model, with GPU (be sure you have this by running nvidia-smi first)
 run-image-gpu:
-	echo "Running docker container, with GPU support"
-	docker run --publish 5000:5000 --gpus all ai-car-damage
+	echo "Running docker container, with GPU support, detached, restart unless stopped"
+	docker run --publish 5000:5000 --restart unless-stopped -d --gpus all ai-car-damage
 
 #TODO: 
 run-tests:
