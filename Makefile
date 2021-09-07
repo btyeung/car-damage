@@ -20,7 +20,7 @@ run-image-gpu:
 	echo "Running docker container, with GPU support, detached, restart unless stopped"
 	docker run --publish 5000:5000 --restart unless-stopped -d --gpus all ai-car-damage
 
-#Run single test, test predictions or inference
+#TODO: needs validation for path issues, run single test, test predictions or inference
 run-predict:
 	python ./src/models/predict_model.py --model custom-auto --weights ./models/weights/final.pth --image ./references/test-images/66.jpg
 
@@ -28,9 +28,4 @@ run-predict:
 start-server:
 	python ./src/models/serve_model.py
 
-
-#TODO: 
-run-tests:
-	echo "Running unit tests"
-	pytest
 
