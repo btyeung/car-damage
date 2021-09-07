@@ -6,6 +6,7 @@
 
 # import the necessary packages
 import io
+import os
 
 from PIL import Image
 import numpy as np
@@ -18,6 +19,11 @@ import cv2
 
 import predict_model as predict
 
+#get current working directory
+cwd = os.getcwd()
+
+print ("Current working directory: " + cwd)
+
 #default to CPU, unless GPU detected on start
 DEVICE = torch.device("cpu")
 
@@ -25,7 +31,7 @@ DEVICE = torch.device("cpu")
 NUM_CLASSES = 2
 CONFIDENCE = 0.20
 
-WEIGHTFILE_PATH = '../../models/weights/final.pth'
+WEIGHTFILE_PATH = './models/weights/final.pth'
 
 # initialize our Flask application 
 app = Flask(__name__)

@@ -8,7 +8,7 @@ __pycache__/
 .tox/
 
 #data/
-models/
+#models/
 
 #reinclude files and dirs
-!models/reference.pth
+#!models/final.pth

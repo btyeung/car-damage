@@ -36,7 +36,7 @@ COPY './src' $HOME/src/
 RUN pip3 install -r $HOME/src/models/requirements-serve.txt
 
 #TODO: copy in weight file
-COPY './models/weights/.pth' $HOME/models/reference.pth
+COPY './models/weights/final.pth' $HOME/models/weights/final.pth
 
 #show python version
 RUN python --version
@@ -45,4 +45,4 @@ RUN echo "Checking for GPU/CUDA support...1 is good, 0 means no GPU present"
 RUN python -c "import torch; print(torch.cuda.device_count())"
 
 #Run app
-CMD python $HOME/models/serve_model.py
+CMD python $HOME/src/models/serve_model.py
