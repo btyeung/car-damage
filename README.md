@@ -40,7 +40,7 @@ We built this project to show how custom trained AI models are incorporated into
 ## References (Huge thanks for their groundwork!):
 * [Car Damage Classification](https://medium.com/analytics-vidhya/car-damage-classification-using-deep-learning-d29fa1e9a520_)
 * [CNN Car Exterior Damage](https://medium.com/@sourish.syntel/cnn-application-detecting-car-exterior-damage-full-implementable-code-1b205e3cb48c)
-* [Pytorch Object Detection](https://www.pyimagesearch.com/2021/08/02/pytorch-object-detection-with-pre-trained-networks/)
+* [Pyimagesearch-Pytorch Object Detection](https://www.pyimagesearch.com/2021/08/02/pytorch-object-detection-with-pre-trained-networks/)
 * [How to train Object Detector with COCO dataset in Pytorch](https://medium.com/fullstackai/how-to-train-an-object-detector-with-your-own-coco-dataset-in-pytorch-319e7090da5) 
 
 
