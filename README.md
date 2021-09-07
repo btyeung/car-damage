@@ -49,11 +49,13 @@ We built this project to show how custom trained AI models are incorporated into
 * [How to train Object Detector with COCO dataset in Pytorch](https://medium.com/fullstackai/how-to-train-an-object-detector-with-your-own-coco-dataset-in-pytorch-319e7090da5) 
 
 <br />
+
 ## Upcoming enhancements
 * Publish of training components
 * Conversion to ONNX and running direct within Mendix runtime
 
 <br />
+
 ### Project Organization (not all parts are implemented)
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
